@@ -1,0 +1,225 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Nocturnal.master.cs" Inherits="CourseProject.Nocturnal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" type="text/css" href="noc_style.css">
+
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+</head>
+   
+   
+<body>
+    <script type="text/javascript">
+       
+    </script>
+     <form id="form1" runat="server">
+        <div style="text-align: center ">
+           
+                &nbsp;<asp:Image ID="Image1" runat="server" Height="10%" ImageUrl="~/img/nocturnal.jpg" Width="20%" />
+        
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/img/noc_group_1.jpg" Width="20%" />
+            <asp:Image ID="Image3" runat="server" Height="10%" ImageUrl="~/img/noc_group_2.jpg" Width="20%" />
+            <asp:Image ID="Image4" runat="server" Height="300px" ImageUrl="~/img/noc_group_3.jpg" Width="19%" />
+            <br />
+            
+          <div id="nav" style="display:inline-block">
+              <ul>
+                  <li><a href="#">主页</a></li>
+                  <li style="z-index:10;"><a href="#">成员专区</a>
+                       <ul style="z-index:10">
+                           <ul style="z-index:10"><a href="#">Jennie</a></ul>
+                           <ul style="z-index:10"><a href="#">Lisa</a></ul>
+                           <ul style="z-index:10"><a href="#">Jisoo</a></ul>
+                           <ul style="z-index:10"><a href="#">Roise</a></ul>
+                      </ul>
+                  </li>
+                  <li><a href="#">商城</a>
+                     
+                  </li>
+                  <li ><a href="#">最新讯息</a></li>
+                 
+              </ul>
+          </div>
+            <div style="display: inline-block;position:absolute; top:320px">
+                <asp:Button  runat="server" Text="登录" CssClass="lgrgbtn"/>
+                <asp:Button  runat="server" Text="注册" CssClass="lgrgbtn" />
+            </div>
+
+
+        </div>
+         <div style="position:absolute ;top:390px;right:0px;">
+              <asp:Image ID="soul_weather_img" runat="server" />
+               <asp:Label ID="label_soul" runat="server" Font-Bold="True" ForeColor="#FCA311" Font-Size="Large" Text="Label"></asp:Label>
+        
+         <br />
+             </div>
+         
+        <div style="position: absolute;
+                top: 390px;left:0px">
+       
+  
+            
+            <%--<audio controls autoplay style="display:none" id="player">
+            <source src="./music/bgm.wav" type="audio/wav">
+            <source src="./music/Lady Gaga,BLACKPINK-Sour Candy.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>--%>
+            <%--<asp:Image ID="Image5" runat="server" Height="280px" ImageUrl="~/img/player.jpg" />--%>
+            
+            <img src="img/player.jpg" border="0" style="width:390px;margin-top:20px;margin-bottom:20px" usemap="#planetmap" alt="Planets" />
+            <map name="planetmap" id="planetmap">
+   <area shape="poly" coords="5,99,169,117,74,154,4,148" id="area1">
+	
+  <area shape="poly" coords="79,154,83,173,223,172,214,132" id="area2" >
+	
+  <area shape="poly" coords="2,156,159,190,152,219,0,209" id="area3">
+	
+  <area shape="poly" coords="68,232,206,220,210,256,69,270" id="area4">
+</map>
+            
+
+            <div id="max" style="z-index:-1">
+        <div class="re">
+            <ul  style="z-index:-1">
+                <li><img src="img/car_1.jpg" alt=""></li>
+                <li><img src="img/car_2.jpg" alt=""></li>
+                <li><img src="img/car_3.jpg" alt=""></li>
+                <li><img src="img/car_4.jpg" alt=""></li>
+                <li><img src="img/car_5.jpg" alt=""></li>
+            </ul>
+            <ol>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ol>
+        </div>
+    </div>
+          
+       </div>    
+           <div runat="server" style="position:absolute;left:390px ;top:390px;z-index:-1;" >
+               <div style="margin:20px;width:600px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" ></asp:ContentPlaceHolder>
+                   </div>
+             <div id="container" style="width: 720px; height: 400px; margin:20px;margin-top:140px;margin-left:40px"></div>
+            </div>
+         <div style="position:absolute;top:100px;left:0px">
+        <asp:Button ID="Button3" runat="server" Text="Black" Cssclass="lgrgbtn" style="background-color:#2b2d42;color:#fcd5ce"/>
+             </br>
+         <asp:Button ID="Button4" runat="server" Text="Pink" Cssclass="lgrgbtn" style="background-color:#fcd5ce;color:#2b2d42"/>
+          </div>
+         </form>
+     <script type="text/javascript" src="Scripts/playercontrol.js">
+        
+    </script>
+    <script>
+        window.onload = function () {
+            var box = this.document.getElementsByClassName("re")[0];
+            var lik = box.getElementsByTagName("li");
+            function fun(i, j) {//转换图片函数，就是把透明度改了一下
+                lik[i].style.opacity = 1;
+                lik[j].style.opacity = 0;
+                lik[i + 5].style.backgroundColor = "#ffffff";//改一下小图标
+                lik[j + 5].style.backgroundColor = "#00000000"
+            }
+            fun(0, 1);//初始化下
+            var i = 0;
+            function auto() {//轮播循环函数
+                if (++i >= 5) {
+                    i = 0;
+                    fun(0, 4);
+                }
+                else fun(i, i - 1);
+            }
+            timer = this.setInterval(auto, 2000);
+            box.onmouseover = function () { //鼠标划上去，停止轮播
+                console.log('good');
+                clearInterval(timer);
+            }
+            box.onmouseout = function () { //鼠标划出，继续轮播
+                timer = setInterval(auto, 2000); //调用定时器
+            }
+            var j = 0;
+            for (; j < 5; j++) {//点击小图标也可以转换图片
+                lik[j + 5].ind = j;
+                lik[j + 5].onclick = function () {
+                    fun(this.ind, i)
+                    i = this.ind;
+                }
+            }
+
+        }
+        
+</script>
+    <script >
+
+        var chart = Highcharts.chart('container', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: '实时人气统计'
+            },
+            xAxis: {
+                categories: ['jennie', 'lisa', 'jisoo', 'roise']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -30,
+                verticalAlign: 'top',
+                y: 25,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                headerFormat: '<b>{point.x}</b><br/>',
+                pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
+            series: [{
+                name: '人气',
+                data: [parseInt(localStorage["jennie"]), parseInt(localStorage["lisa"]), parseInt(localStorage["jisoo"]), parseInt(localStorage["roise"])]
+            }]
+        });
+        chart.xAxis[0].labelGroup.element.childNodes.forEach(function (label) {
+            label.style.cursor = "pointer";
+            label.onclick = function () {
+                localStorage[this.textContent] = parseInt(localStorage[this.textContent]) + 1;
+                alert("你为" + this.textContent + "投票了");
+            }
+        });
+</script>
+
+</body>
+</html>

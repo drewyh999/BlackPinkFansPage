@@ -1,0 +1,126 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Diournal.master.cs" Inherits="CourseProject.Diournal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body{
+            background-color:#fcd5ce
+        }
+        #nav{
+           
+            width:80%;
+        }
+        #nav ul{
+            padding:0px;
+            list-style:none;
+            margin:2px;
+        }
+        #nav ul li{
+            float:left;
+            text-align:center;
+            width:21%;
+            margin:3px;
+              background:#e2afff;
+        }
+        #nav ul li a{
+            color:#fff;
+            text-decoration:none;
+            font-family:'Courier New';
+            background:#e2afff;
+            display:block;
+            padding:20px;
+        }
+        #nav ul li a:hover{
+            color:#fcd5ce;
+            background-color:#2b2d42;
+        }
+        #nav ul li ul{
+            display:none;
+        }
+        #nav ul li:hover ul{
+            display:block;
+        }
+
+        .positionabs{
+            position:absolute;
+        }
+        .lgrgbtn {
+            padding:20px;
+            background-color:#B17BD0;
+            color:white;
+            margin-right:3px;
+            border:0;
+        }
+
+        </style>
+</head>
+    
+    <body>
+    <form id="form1" runat="server">
+        <div style="text-align: center ">
+           
+                &nbsp;<asp:Image ID="Image1" runat="server" Height="10%" ImageUrl="~/img/diournal.jpg" Width="20%" />
+        
+            <asp:Image ID="Image2" runat="server" ImageUrl="~/img/group2.jpg" Width="20%" />
+            <asp:Image ID="Image3" runat="server" Height="10%" ImageUrl="~/img/two.jpg" Width="20%" />
+            <asp:Image ID="Image4" runat="server" Height="10%" ImageUrl="~/img/two2.jpg" Width="20%" />
+            <br />
+            
+          <div id="nav" style="display:inline-block">
+              <ul>
+                  <li><a href="#">主页</a></li>
+                  <li><a href="#">成员专区</a>
+                       <ul>
+                           <ul><a href="#">Jennie</a></ul>
+                           <ul><a href="#">Lisa</a></ul>
+                           <ul><a href="#">Jisoo</a></ul>
+                           <ul><a href="#">Roise</a></ul>
+                      </ul>
+                  </li>
+                  <li><a href="#">商城</a>
+                     
+                  </li>
+                  <li ><a href="#">最新讯息</a></li>
+                 
+              </ul>
+          </div>
+            <div style="display: inline-block;position:absolute; top:320px">
+                <asp:Button  runat="server" Text="登录" CssClass="lgrgbtn"/>
+                <asp:Button  runat="server" Text="注册" CssClass="lgrgbtn" />
+            </div>
+
+
+        </div>
+        <div style="         position: absolute;
+                top: 390px;">
+       
+  
+        <asp:Calendar ID="Calendar1" runat="server" style="width:390px" ></asp:Calendar>
+              <asp:Image ID="Image5" runat="server" Height="98px" ImageUrl="~/img/daysbackground.jpg" Width="250px" />
+            <br />
+        <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="XX-Large" ></asp:Label>
+            <br/>
+            <audio controls autoplay style="display:none">
+            <source src="./music/bgm.wav" type="audio/wav">
+            <source src="./music/Lady Gaga,BLACKPINK-Sour Candy.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            
+       </div>
+        <div runat="server" style="position:absolute;left:390px;" >
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">   </asp:ContentPlaceHolder>
+        </div>
+      <div style="position:absolute;top:100px;left:0px">
+        <asp:Button ID="Button3" runat="server" Text="Black" Cssclass="lgrgbtn" style="background-color:#2b2d42;color:#fcd5ce"/>
+             </br>
+         <asp:Button ID="Button4" runat="server" Text="Pink" Cssclass="lgrgbtn" style="background-color:#fcd5ce;color:#2b2d42"/>
+          </div>
+    </form>
+</body>
+</html>
+        
