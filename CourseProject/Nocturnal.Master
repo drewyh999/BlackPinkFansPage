@@ -16,39 +16,42 @@
    
 <body>
     <script type="text/javascript">
-       
+        //localStorage["jennie"] = 90;
+        //localStorage["lisa"] = 70;
+        //localStorage["jisoo"] = 89
+        //localStorage["roise"] = 77;
     </script>
      <form id="form1" runat="server">
         <div style="text-align: center ">
            
-                &nbsp;<asp:Image ID="Image1" runat="server" Height="10%" ImageUrl="~/img/nocturnal.jpg" Width="20%" />
+                &nbsp;<asp:Image ID="Image1" runat="server" ImageUrl="~/img/nocturnal.jpg" Width="20%" />
         
             <asp:Image ID="Image2" runat="server" ImageUrl="~/img/noc_group_1.jpg" Width="20%" />
-            <asp:Image ID="Image3" runat="server" Height="10%" ImageUrl="~/img/noc_group_2.jpg" Width="20%" />
+            <asp:Image ID="Image3" runat="server" ImageUrl="~/img/noc_group_2.jpg" Width="20%" />
             <asp:Image ID="Image4" runat="server" Height="300px" ImageUrl="~/img/noc_group_3.jpg" Width="19%" />
             <br />
             
           <div id="nav" style="display:inline-block">
               <ul>
-                  <li><a href="#">主页</a></li>
+                  <li><a href="index.aspx">主页</a></li>
                   <li style="z-index:10;"><a href="#">成员专区</a>
                        <ul style="z-index:10">
-                           <ul style="z-index:10"><a href="#">Jennie</a></ul>
-                           <ul style="z-index:10"><a href="#">Lisa</a></ul>
-                           <ul style="z-index:10"><a href="#">Jisoo</a></ul>
-                           <ul style="z-index:10"><a href="#">Roise</a></ul>
+                           <ul style="z-index:10"><a href="Jennie.aspx">Jennie</a></ul>
+                           <ul style="z-index:10"><a href="Lisa.aspx">Lisa</a></ul>
+                           <ul style="z-index:10"><a href="Jisoo.aspx">Jisoo</a></ul>
+                           <ul style="z-index:10"><a href="Roise.aspx">Roise</a></ul>
                       </ul>
                   </li>
-                  <li><a href="#">商城</a>
+                  <li><a href="market_page.aspx">商城</a>
                      
                   </li>
-                  <li ><a href="#">最新讯息</a></li>
-                 
+                  <li ><a href="News.aspx">最新讯息</a></li>
+                  
               </ul>
           </div>
-            <div style="display: inline-block;position:absolute; top:320px">
-                <asp:Button  runat="server" Text="登录" CssClass="lgrgbtn"/>
-                <asp:Button  runat="server" Text="注册" CssClass="lgrgbtn" />
+            <div style="position:absolute; top:320px;display:flex;right:0">
+                <asp:Button  runat="server" Text="登录" CssClass="lgrgbtn" ID="login" OnClick="Unnamed1_Click"/>
+                <asp:Button  runat="server" Text="注册" CssClass="lgrgbtn" ID="register" OnClick="register_Click" />
             </div>
 
 
@@ -105,15 +108,15 @@
           
        </div>    
            <div runat="server" style="position:absolute;left:390px ;top:390px;z-index:-1;" >
-               <div style="margin:20px;width:600px">
+               <div style="margin:20px;width:660px;margin-top:62px;margin-left:38px">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" ></asp:ContentPlaceHolder>
                    </div>
-             <div id="container" style="width: 720px; height: 400px; margin:20px;margin-top:140px;margin-left:40px"></div>
+             <div id="container_chart" runat="server" style="width: 660px; height: 400px; margin:20px;margin-top:100px;margin-left:40px"></div>
             </div>
          <div style="position:absolute;top:100px;left:0px">
-        <asp:Button ID="Button3" runat="server" Text="Black" Cssclass="lgrgbtn" style="background-color:#2b2d42;color:#fcd5ce"/>
+        <asp:Button ID="Button3" runat="server" Text="Black" Cssclass="lgrgbtn" style="background-color:#2b2d42;color:#fcd5ce" PostBackUrl="index.aspx?master=black"/>
              </br>
-         <asp:Button ID="Button4" runat="server" Text="Pink" Cssclass="lgrgbtn" style="background-color:#fcd5ce;color:#2b2d42"/>
+         <asp:Button ID="Button4" runat="server" Text="Pink" Cssclass="lgrgbtn" style="background-color:#fcd5ce;color:#2b2d42" PostBackUrl="index.aspx?master=pink"/>
           </div>
          </form>
      <script type="text/javascript" src="Scripts/playercontrol.js">
@@ -160,7 +163,7 @@
 </script>
     <script >
 
-        var chart = Highcharts.chart('container', {
+        var chart = Highcharts.chart('container_chart', {
             chart: {
                 type: 'bar'
             },

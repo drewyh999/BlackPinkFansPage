@@ -17,6 +17,32 @@ namespace CourseProject
 
             Label1.Text = Convert.ToString( timeSpan.Days+"天");
             Calendar1.TodaysDate = now;
+
+            if (!IsPostBack)
+            {
+
+                if (Request.Cookies["userphone"] != null)
+                {
+                    container_chart.Visible = true;
+                }
+                else
+                {
+                    container_chart.Visible = false;
+
+                }
+
+
+            }
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        protected void Unnamed2_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
         }
     }
 }

@@ -52,6 +52,24 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
@@ -107,6 +125,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="App_Data\BlackPink.mdf" />
+    <Content Include="App_Data\BlackPink_log.ldf">
+      <DependentUpon>BlackPink.mdf</DependentUpon>
+    </Content>
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -229,27 +251,86 @@
     <Content Include="img\car_3.jpg" />
     <Content Include="img\car_4.jpg" />
     <Content Include="img\car_5.jpg" />
+    <Content Include="img\detail_1.jpg" />
+    <Content Include="img\detail_2.jpg" />
+    <Content Include="img\IMG_5690.JPG" />
+    <Content Include="img\IMG_5691.JPG" />
+    <Content Include="img\IMG_5692.JPG" />
+    <Content Include="img\IMG_5693.JPG" />
+    <Content Include="img\IMG_5694.JPG" />
+    <Content Include="img\IMG_5695.JPG" />
+    <Content Include="img\IMG_5696.JPG" />
+    <Content Include="img\IMG_5697.JPG" />
+    <Content Include="img\IMG_5698.JPG" />
+    <Content Include="img\IMG_5699.JPG" />
+    <Content Include="img\IMG_5700.JPG" />
+    <Content Include="img\IMG_5701.JPG" />
+    <Content Include="img\IMG_5702.JPG" />
+    <Content Include="img\IMG_5703.JPG" />
+    <Content Include="img\IMG_5704.JPG" />
+    <Content Include="img\IMG_5705.JPG" />
+    <Content Include="img\IMG_5706.JPG" />
+    <Content Include="img\IMG_5707.JPG" />
+    <Content Include="img\IMG_5708.JPG" />
+    <Content Include="img\IMG_5709.JPG" />
+    <Content Include="img\IMG_5710.JPG" />
+    <Content Include="img\IMG_5711.JPG" />
+    <Content Include="img\IMG_5712.JPG" />
+    <Content Include="img\IMG_5713.JPG" />
+    <Content Include="img\IMG_5714.JPG" />
+    <Content Include="img\IMG_5715.JPG" />
+    <Content Include="img\IMG_5716.JPG" />
+    <Content Include="img\IMG_5717.JPG" />
+    <Content Include="img\IMG_5718.JPG" />
+    <Content Include="img\IMG_5719.JPG" />
     <Content Include="img\jennie_background.jpg" />
     <Content Include="img\jennie_background_2.jpg" />
+    <Content Include="img\jennie_name.jpg" />
+    <Content Include="img\jisoo_background.jpg" />
+    <Content Include="img\jisoo_name.jpg" />
+    <Content Include="img\jisoo_self.jpg" />
+    <Content Include="img\jsolo.JPG" />
+    <Content Include="img\ktl_black.JPG" />
+    <Content Include="img\ktl_pink.JPG" />
+    <Content Include="img\lisa_background.jpg" />
+    <Content Include="img\lisa_name.jpg" />
+    <Content Include="img\lisa_self.jpg" />
+    <Content Include="img\market_title.jpg" />
+    <Content Include="img\newpost_background_1.jpg" />
+    <Content Include="img\newpost_background_2.jpg" />
     <Content Include="img\noc_group_1.jpg" />
     <Content Include="img\noc_group_2.jpg" />
     <Content Include="img\noc_group_3.jpg" />
     <Content Include="img\nothing.gif" />
+    <Content Include="img\np_background.jpg" />
     <Content Include="img\player.jpg" />
     <Content Include="img\Read me.txt" />
+    <Content Include="img\roise_background.jpg" />
+    <Content Include="img\roise_name.jpg" />
+    <Content Include="img\roise_self.jpg" />
     <Content Include="img\r_b.gif" />
     <Content Include="img\r_t1.gif" />
+    <Content Include="img\su.JPG" />
     <Content Include="img\tem1.gif" />
     <Content Include="img\tem2.gif" />
     <Content Include="img\tem3.gif" />
     <Content Include="img\tem4.gif" />
     <Content Include="img\tem5.gif" />
+    <Content Include="img\upload - 副本.png" />
     <Content Include="Jennie.aspx" />
+    <Content Include="Jisoo.aspx" />
+    <Content Include="Lisa.aspx" />
+    <Content Include="marketcate.xml" />
     <Content Include="music\BLACKPINK-AS IF IT%27S YOUR LAST %28마지막처럼%29.mp3" />
     <Content Include="music\BLACKPINK-DDU-DU DDU-DU %28뚜두뚜두%29 %28Korean Ver.%29.mp3" />
     <Content Include="music\BLACKPINK-Forever Young.mp3" />
     <Content Include="music\BLACKPINK-Kill This Love%281%29.mp3" />
+    <Content Include="NewPost.aspx" />
+    <Content Include="News.aspx" />
     <Content Include="Nocturnal.Master" />
+    <Content Include="Market.cshtml" />
+    <Content Include="market_page.aspx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -272,7 +353,10 @@
     <Content Include="music\bgm.wav" />
     <Content Include="music\Lady Gaga,BLACKPINK-Sour Candy.mp3" />
     <Content Include="noc_style.css" />
+    <Content Include="Personal.aspx" />
+    <Content Include="PostDetail.aspx" />
     <Content Include="register.aspx" />
+    <Content Include="Roise.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -330,6 +414,7 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="DBHelper.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +446,20 @@
     <Compile Include="Jennie.aspx.designer.cs">
       <DependentUpon>Jennie.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Jisoo.aspx.cs">
+      <DependentUpon>Jisoo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Jisoo.aspx.designer.cs">
+      <DependentUpon>Jisoo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lisa.aspx.cs">
+      <DependentUpon>Lisa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lisa.aspx.designer.cs">
+      <DependentUpon>Lisa.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,12 +467,41 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="NewPost.aspx.cs">
+      <DependentUpon>NewPost.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NewPost.aspx.designer.cs">
+      <DependentUpon>NewPost.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="News.aspx.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="News.aspx.designer.cs">
+      <DependentUpon>News.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Nocturnal.Master.cs">
       <DependentUpon>Nocturnal.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Nocturnal.Master.designer.cs">
       <DependentUpon>Nocturnal.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Personal.aspx.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal.aspx.designer.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Post.cs" />
+    <Compile Include="PostDetail.aspx.cs">
+      <DependentUpon>PostDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PostDetail.aspx.designer.cs">
+      <DependentUpon>PostDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -387,6 +515,13 @@
     </Compile>
     <Compile Include="register.aspx.designer.cs">
       <DependentUpon>register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Roise.aspx.cs">
+      <DependentUpon>Roise.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Roise.aspx.designer.cs">
+      <DependentUpon>Roise.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -402,6 +537,7 @@
     <Compile Include="Site.Mobile.Master.designer.cs">
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
+    <Compile Include="User.cs" />
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -414,10 +550,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="market_page.aspx.cs">
+      <DependentUpon>market_page.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="market_page.aspx.designer.cs">
+      <DependentUpon>market_page.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />

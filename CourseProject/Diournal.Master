@@ -5,6 +5,8 @@
 <html>
 <head runat="server">
     <title></title>
+     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://code.highcharts.com/highcharts.js"></script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
@@ -67,31 +69,31 @@
                 &nbsp;<asp:Image ID="Image1" runat="server" Height="10%" ImageUrl="~/img/diournal.jpg" Width="20%" />
         
             <asp:Image ID="Image2" runat="server" ImageUrl="~/img/group2.jpg" Width="20%" />
-            <asp:Image ID="Image3" runat="server" Height="10%" ImageUrl="~/img/two.jpg" Width="20%" />
+            <asp:Image ID="Image3" runat="server" Height="300px" ImageUrl="~/img/two.jpg" />
             <asp:Image ID="Image4" runat="server" Height="10%" ImageUrl="~/img/two2.jpg" Width="20%" />
             <br />
             
           <div id="nav" style="display:inline-block">
               <ul>
-                  <li><a href="#">主页</a></li>
+                  <li><a href="index.aspx">主页</a></li>
                   <li><a href="#">成员专区</a>
                        <ul>
-                           <ul><a href="#">Jennie</a></ul>
-                           <ul><a href="#">Lisa</a></ul>
-                           <ul><a href="#">Jisoo</a></ul>
-                           <ul><a href="#">Roise</a></ul>
+                           <ul><a href="Jennie.aspx">Jennie</a></ul>
+                           <ul><a href="Lisa.aspx">Lisa</a></ul>
+                           <ul><a href="Jisoo.aspx">Jisoo</a></ul>
+                           <ul><a href="Roise.aspx">Roise</a></ul>
                       </ul>
                   </li>
-                  <li><a href="#">商城</a>
+                  <li><a href="market_page.aspx">商城</a>
                      
                   </li>
-                  <li ><a href="#">最新讯息</a></li>
+                  <li ><a href="News.aspx">最新讯息</a></li>
                  
               </ul>
           </div>
-            <div style="display: inline-block;position:absolute; top:320px">
-                <asp:Button  runat="server" Text="登录" CssClass="lgrgbtn"/>
-                <asp:Button  runat="server" Text="注册" CssClass="lgrgbtn" />
+            <div style="position:absolute; top:320px;display:flex;right:0">
+                <asp:Button  runat="server" Text="登录" CssClass="lgrgbtn" OnClick="Unnamed1_Click"/>
+                <asp:Button  runat="server" Text="注册" CssClass="lgrgbtn" OnClick="Unnamed2_Click" />
             </div>
 
 
@@ -100,27 +102,88 @@
                 top: 390px;">
        
   
-        <asp:Calendar ID="Calendar1" runat="server" style="width:390px" ></asp:Calendar>
+        <asp:Calendar ID="Calendar1" runat="server" style="width:250px" ></asp:Calendar>
               <asp:Image ID="Image5" runat="server" Height="98px" ImageUrl="~/img/daysbackground.jpg" Width="250px" />
             <br />
         <asp:Label ID="Label1" runat="server" Text="Label" Font-Size="XX-Large" ></asp:Label>
             <br/>
-            <audio controls autoplay style="display:none">
-            <source src="./music/bgm.wav" type="audio/wav">
-            <source src="./music/Lady Gaga,BLACKPINK-Sour Candy.mp3" type="audio/mp3">
-                Your browser does not support the audio element.
-            </audio>
+            
             
        </div>
-        <div runat="server" style="position:absolute;left:390px;" >
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">   </asp:ContentPlaceHolder>
-        </div>
+        <div runat="server" style="position:absolute;left:390px ;top:390px;z-index:-1;" >
+               <div style="margin:20px;width:660px;margin-top:62px;;margin-left:38px">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" ></asp:ContentPlaceHolder>
+                   </div>
+             <div id="container_chart" runat="server" style="width: 660px; height: 400px; margin:20px;margin-top:100px;margin-left:40px"></div>
+            </div>
       <div style="position:absolute;top:100px;left:0px">
-        <asp:Button ID="Button3" runat="server" Text="Black" Cssclass="lgrgbtn" style="background-color:#2b2d42;color:#fcd5ce"/>
+        <asp:Button ID="Button3" runat="server" Text="Black" Cssclass="lgrgbtn" style="background-color:#2b2d42;color:#fcd5ce" PostBackUrl="index.aspx?master=black"/>
              </br>
-         <asp:Button ID="Button4" runat="server" Text="Pink" Cssclass="lgrgbtn" style="background-color:#fcd5ce;color:#2b2d42"/>
+         <asp:Button ID="Button4" runat="server" Text="Pink" Cssclass="lgrgbtn" style="background-color:#fcd5ce;color:#2b2d42" PostBackUrl="index.aspx?master=pink"/>
           </div>
     </form>
+<script >
+    
+        var chart = Highcharts.chart('container_chart', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: '实时人气统计'
+            },
+            xAxis: {
+                categories: ['jennie', 'lisa', 'jisoo', 'roise']
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: ''
+                },
+                stackLabels: {
+                    enabled: true,
+                    style: {
+                        fontWeight: 'bold',
+                        color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+                    }
+                }
+            },
+            legend: {
+                align: 'right',
+                x: -30,
+                verticalAlign: 'top',
+                y: 25,
+                floating: true,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+                borderColor: '#CCC',
+                borderWidth: 1,
+                shadow: false
+            },
+            tooltip: {
+                headerFormat: '<b>{point.x}</b><br/>',
+                pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+            },
+            plotOptions: {
+                column: {
+                    stacking: 'normal',
+                    dataLabels: {
+                        enabled: true,
+                        color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+                    }
+                }
+            },
+            series: [{
+                name: '人气',
+                data: [parseInt(localStorage["jennie"]), parseInt(localStorage["lisa"]), parseInt(localStorage["jisoo"]), parseInt(localStorage["roise"])]
+            }]
+        });
+        chart.xAxis[0].labelGroup.element.childNodes.forEach(function (label) {
+            label.style.cursor = "pointer";
+            label.onclick = function () {
+                localStorage[this.textContent] = parseInt(localStorage[this.textContent]) + 1;
+                alert("你为" + this.textContent + "投票了");
+            }
+        });
+</script>
 </body>
 </html>
         

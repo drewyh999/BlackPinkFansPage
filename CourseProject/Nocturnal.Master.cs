@@ -28,8 +28,34 @@ namespace CourseProject
            
 
             soul_weather_img.ImageUrl = "~/img/" + soul_img_name;
-           
-            
+
+            if (!IsPostBack)
+            {
+
+                if (Request.Cookies["userphone"] != null)
+                {
+                    container_chart.Visible = true;
+                }
+                else
+                {
+                    container_chart.Visible = false;
+
+                }
+
+
+            }
+
+
+        }
+
+        protected void Unnamed1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("login.aspx");
+        }
+
+        protected void register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("register.aspx");
         }
     }
 }

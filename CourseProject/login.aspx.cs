@@ -13,5 +13,22 @@ namespace CourseProject
         {
 
         }
+
+        protected void loginbtn_Click(object sender, EventArgs e)
+        {
+            if (DBHelper.VerifyUser(phone.Text, pwd.Text))
+            {
+                HttpCookie aCookie = new HttpCookie("userphone");
+                aCookie.Value = phone.Text;
+                aCookie.Expires = DateTime.MaxValue;
+                Response.Cookies.Add(aCookie);
+                Response.Redirect("index.aspx");
+
+            }
+            else
+            {
+                Response.Write("<script>alert('用户名或密码错误！')</script>");
+            }
+        }
     }
 }

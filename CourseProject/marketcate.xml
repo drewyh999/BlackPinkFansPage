@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Category value="1" name="分类">
+  <Selection value="2" name="专辑"></Selection>
+  <Selection value="3" name="周边"></Selection>
+  <Selection value="4" name="购物车"></Selection>
+</Category>

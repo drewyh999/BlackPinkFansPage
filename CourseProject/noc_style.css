@@ -53,6 +53,10 @@
     margin-right: 3px;
     border: 0;
 }
+    .lgrgbtn:hover {
+        background-color: #2b2d42;
+        color: #f48c06;
+    }
 #max {
    
     height: 390px;
@@ -72,7 +76,7 @@
     }
 
         .re ul > li {
-            width: 600px;
+           
             height: 300px;
             position: absolute;
             transition: 1s;
@@ -111,4 +115,10 @@
         border-radius: 2em;
         border: 5px solid #999999;
     }
+.vis{
+    display:block;
+}
+.invis{
+    display:none;
+}
 

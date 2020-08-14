@@ -105,6 +105,15 @@ namespace CourseProject
         protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder2;
 
         /// <summary>
+        /// container_chart control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl container_chart;
+
+        /// <summary>
         /// Button3 control.
         /// </summary>
         /// <remarks>
